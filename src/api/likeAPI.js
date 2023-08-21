@@ -1,5 +1,5 @@
 import axios from "axios"
-import {API_URL} from "../api/ConsumerAPI"
+
 const url = 'http://192.168.0.74:8080'
 
 //좋아요 누르기

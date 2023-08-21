@@ -1,5 +1,5 @@
 import axios from "axios"
-import {API_URL} from "../api/ConsumerAPI"
+
 
 export const postLogin = async(params) => {
 
