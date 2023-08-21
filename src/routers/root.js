@@ -156,6 +156,10 @@ const router = createBrowserRouter([
     }
     ,
     {
+                path:"/member/signup",
+                element: <FarmerSignUpComponent></FarmerSignUpComponent>
+    },
+    {
         path:"/member/loginhandler",
         element: <LoginHandleComponent></LoginHandleComponent>
     }
