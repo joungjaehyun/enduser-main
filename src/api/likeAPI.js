@@ -1,4 +1,5 @@
 import axios from "axios"
+import {API_URL} from "../api/ConsumerAPI"
 const url = 'http://192.168.0.74:8080'
 
 //좋아요 누르기
@@ -17,7 +18,7 @@ export const addBoardLike = async (bno , params) => {
   alert(params.email)
 
   
-  const res = await axios.post(`${url}/api/boardfavorite/${bno}`,formdata,header)
+  const res = await axios.post(`${API_URL}/api/boardfavorite/${bno}`,formdata,header)
 
   return res.data
   
@@ -31,7 +32,7 @@ export const deleteBoardLike = async (bno , params) => {
   alert(bno)
   alert(email)
 
-  const res = await axios.delete(`${url}/api/boardfavorite/${bno}/${email}`)
+  const res = await axios.delete(`${API_URL}/api/boardfavorite/${bno}/${email}`)
 
   return res.data
 
@@ -40,7 +41,7 @@ export const deleteBoardLike = async (bno , params) => {
 
 export const getBoardLikeCheck = async (bno , params) => {
 
-  const res = await axios.get(`${url}/api/boardfavorite/${bno}/check?email=${params.email}`)
+  const res = await axios.get(`${API_URL}/api/boardfavorite/${bno}/check?email=${params.email}`)
 
   return res.data
   
@@ -89,7 +90,7 @@ export const addProductLike = async (pno , params) => {
   const formdata = new FormData()
   formdata.append("email" , params.email)
     
-  const res = await axios.post(`${url}/api/productfavorite/${pno}` , formdata , header)
+  const res = await axios.post(`${API_URL}/api/productfavorite/${pno}` , formdata , header)
 
   return res.data
   
@@ -100,7 +101,7 @@ export const deleteProductLike = async (pno , params) => {
   const email = params.email;
   alert(email)
   
-  const res = await axios.delete(`${url}/api/productfavorite/${pno}/${email}`)
+  const res = await axios.delete(`${API_URL}/api/productfavorite/${pno}/${email}`)
 
   return res.data
   
@@ -109,7 +110,7 @@ export const deleteProductLike = async (pno , params) => {
 export const countProductLike = async (pno , params) => {
 
   
-  const res = await axios.get(`${url}/api/productfavorite/${pno}` , params)
+  const res = await axios.get(`${API_URL}/api/productfavorite/${pno}` , params)
 
   return res.data
   
@@ -117,7 +118,7 @@ export const countProductLike = async (pno , params) => {
 
 export const ListProductLike = async (tomno , params) => {
   
-  const res = await axios.get(`${url}/api/productfavorite/${tomno}` , params)
+  const res = await axios.get(`${API_URL}/api/productfavorite/${tomno}` , params)
 
   return res.data
   
@@ -125,7 +126,7 @@ export const ListProductLike = async (tomno , params) => {
 
 export const getProductLikeCheck = async (tomno , params) => {
 
-  const res = await axios.get(`${url}/api/productfavorite/${tomno}/check?email=${params.email}`)
+  const res = await axios.get(`${API_URL}/api/productfavorite/${tomno}/check?email=${params.email}`)
 
   return res.data
   

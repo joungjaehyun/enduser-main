@@ -1,5 +1,5 @@
 import axios from "axios"
-
+import {API_URL} from "../api/ConsumerAPI"
 
 export const postLogin = async(params) => {
 
@@ -10,7 +10,7 @@ export const postLogin = async(params) => {
         }
     }
 
-  const res = await axios.post('http://192.168.0.74:8080/api/member/login', params, header)
+  const res = await axios.post(`${API_URL}/api/member/login`, params, header)
 
     return res.data
   
@@ -29,7 +29,7 @@ export const modifyMember = async(params) => {
     console.log(params);
     console.log("========================================")
 
-  const res = await axios.put('http://192.168.0.74:8080/api/member/modify',params , header)
+  const res = await axios.put(`${API_URL}/api/member/modify`,params , header)
 
     return res.data
   
@@ -48,7 +48,7 @@ export const signupMember = async(params) => {
     console.log(params);
     console.log("========================================")
 
-  const res = await axios.post('http://192.168.0.74:8080/api/member',params,header)
+  const res = await axios.post(`${API_URL}/api/member`,params,header)
 
     return res.data
   

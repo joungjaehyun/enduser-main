@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createSearchParams } from "react-router-dom";
-
+import {API_URL} from "../api/ConsumerAPI"
 const url = 'http://192.168.0.74:8080'
 // const url = 'http://192.168.0.48:8080'
 // const url = 'http://localhost:8080'
@@ -9,7 +9,7 @@ export const getList = async (queryObj) => {
 
   const queryString = createSearchParams(queryObj).toString();
 
-  const res = await axios.get(`${url}/api/products/list?${queryString}`)
+  const res = await axios.get(`${API_URL}/api/products/list?${queryString}`)
 
   return res.data
 
@@ -17,7 +17,7 @@ export const getList = async (queryObj) => {
 
 export const readOne = async (pno) => {
 
-  const res = await axios.get(`${url}/api/products/${pno}`)
+  const res = await axios.get(`${API_URL}/api/products/${pno}`)
 
   // console.log("proAPI read res: "+res)
 
@@ -32,7 +32,7 @@ export const registerProduct = async (FormData) =>{
       }
   }
 
-  const res = await axios.post(`${url}/api/products/`, FormData, header)
+  const res = await axios.post(`${API_URL}/api/products/`, FormData, header)
   
   return res.data
 
@@ -47,7 +47,7 @@ export const registerProduct = async (FormData) =>{
 
   export const deleteProduct = async (pno) =>{
 
-  const res = await axios.delete(`${url}/api/products/${pno}`)
+  const res = await axios.delete(`${API_URL}/api/products/${pno}`)
   return res.data
 
 }
@@ -60,7 +60,7 @@ export const putProduct = async (formData) => {
       }
   }
 
-  const res = await axios.put(`${url}/api/products/`, formData, header)
+  const res = await axios.put(`${API_URL}/api/products/`, formData, header)
 
   return res.data
 
