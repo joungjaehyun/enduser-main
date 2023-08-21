@@ -156,10 +156,6 @@ const router = createBrowserRouter([
     }
     ,
     {
-                path:"/member/signup",
-                element: <FarmerSignUpComponent></FarmerSignUpComponent>
-    },
-    {
         path:"/member/loginhandler",
         element: <LoginHandleComponent></LoginHandleComponent>
     }
@@ -208,7 +204,11 @@ const router = createBrowserRouter([
             {
               path:"/farmer/diary/regist",
               element: <FarmerDiaryRegistPage></FarmerDiaryRegistPage>
-            },
+            }
+            ,{
+               path:"/member/signup",
+                element: <FarmerSignUpComponent></FarmerSignUpComponent>
+            }
 
       
 ])
